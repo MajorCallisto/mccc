@@ -30,5 +30,18 @@
 	<gap:plugin name="org.apache.cordova.dialogs"/>
 	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" /><!-- https://github.com/phonegap-build/PushPlugin/blob/1979d97/README.md -->
+	
+	<icon src="res/icon/android/icon-96-xhdpi.png" />
+	<gap:splash src="res/screen/android/screen-hdpi-portrait.png" />
+
+	<icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+	<icon src="res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="res/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<icon src="res/icon/android/fr-xxhdpi.png" gap:platform="android" gap:qualifier="fr-xxhdpi" />
+	<gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="ldpi" />
+	<gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="mdpi" />
+	<gap:splash src="res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="hdpi" />
+	<gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="xhdpi" />
 
 </widget>
