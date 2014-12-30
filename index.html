@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Major Callisto Calorie Counter">
+	
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<script src="phonegap.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/angular-sanitize.js"></script>
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	    
+		<script type="text/javascript">
+			function onLoad() {
+				document.addEventListener("deviceready", function () {
+				}, false);
+			}
+			window.onload = function(){
+				
+				if (window.debug == true){
+					alert("Welcome");	
+				}
+				window.toggleMenu = function(){
+					if(document.getElementById("nav_header").style.display == "inline"){
+						document.getElementById("nav_header").style.display = "none";
+					}else{
+						document.getElementById("nav_header").style.display = "inline";
+					}
+				}
+			}
+			var list_of_scripts = new Array();
+			var cachebuster = Math.round(new Date().getTime() / 1000);
+			var prefix_domain = "";
+			prefix_domain = "";
+			var list_of_scripts = new Array();
+
+			//The rest of the app stuff
+			var ip = "192.168.0.200";
+			if (window.localStorage.getItem("serverIp")){
+				ip = window.localStorage.getItem("serverIp");
+			}else {
+				window.localStorage.setItem("serverIp", ip);
+			}
+			if (window.localStorage.getItem("useWeinre")== "true"){
+//				list_of_scripts.push("http://"+ip+":8080/target/target-script-min.js#anonymous");
+				var weinreTag = '<scr'+'ipt src="http://'+ip+':8080/target/target-script-min.js#anonymous"></scr'+'ipt>';
+				document.write(weinreTag);
+			}
+			
+			list_of_scripts.push(prefix_domain + "js/app.js");
+			list_of_scripts.push(prefix_domain + "js/main.js");
+			list_of_scripts.push(prefix_domain + "js/controllers.js");
+			list_of_scripts.push(prefix_domain + "js/vendor/gsap/TweenLite.min.js");
+			list_of_scripts.push(prefix_domain + "js/vendor/gsap/plugins/CSSPlugin.min.js");
+			list_of_scripts.push(prefix_domain + "js/vendor/gsap/plugins/ScrollToPlugin.min.js");
+			list_of_scripts.push(prefix_domain + "js/vendor/gsap/easing/EasePack.min.js");
+			
+			for (var i = 0; i < list_of_scripts.length; i ++){
+				document.write('<scr'+'ipt type="text/javascript" src="'+list_of_scripts[i]+'?cb=' +cachebuster+'"></scr' + 'ipt>');
+			}
+
+		</script>
+    </head>
+    <body ng-app="MCCalorieCounterApp" data-role="page">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		<ng-include src="'partials/header.html'"></ng-include>
+		<article id="page_body" ng-view ng-animate></article>
+		<ng-include src="'partials/footer.html'"></ng-include>
+		
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+ 		
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+		-->
+    </body>
+</html>

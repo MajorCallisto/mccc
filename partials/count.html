@@ -1,0 +1,65 @@
+<h3>Breakfast</h3>
+<span class="details">
+<input type="text" id="dailyBreakfast" ng-model="today.breakfast" ng-change="updateTotals()">/{{target.breakfast}} cal
+</span>
+<hr>
+<h3>Lunch</h3>
+<span class="details">
+<input type="text" id="dailyLunch" ng-model="today.lunch" ng-change="updateTotals()">/{{target.lunch}} cal
+</span>
+<hr>
+<h3>Dinner</h3>
+<span class="details">
+<input type="text" id="dailyDinner" ng-model="today.dinner" ng-change="updateTotals()">/{{target.dinner}} cal
+</span>
+<hr>
+<h3>Other</h3>
+<span class="details">
+<input type="text" id="dailyOther" ng-model="today.other" ng-change="updateTotals()">/{{target.other}} cal
+</span>
+<hr>
+<h3>Water</h3>
+<span class="details">
+<input type="text" id="dailyWater" ng-model="today.water" ng-change="updateTotals()">/{{target.water}} glasses
+</span>
+<hr>
+<h3>Fibre</h3>
+<span class="details">
+<input type="text" id="dailyFibre" ng-model="today.fibre" ng-change="updateTotals()">/{{target.fibre}} g
+</span>
+<hr>
+<h3>Fruit/Veg</h3>
+<span class="details">
+	<input type="checkbox" ng-model="today.fruitVeg[0]" ng-change="updateTotals()">
+	<input type="checkbox" ng-model="today.fruitVeg[1]" ng-change="updateTotals()">
+	<input type="checkbox" ng-model="today.fruitVeg[2]" ng-change="updateTotals()">
+	<input type="checkbox" ng-model="today.fruitVeg[3]" ng-change="updateTotals()">
+	<input type="checkbox" ng-model="today.fruitVeg[4]" ng-change="updateTotals()">
+</span>
+<hr>
+<h3>Oops</h3>
+<span class="details">
+<input type="text" id="dailyOops" value="{{today.oops}}">
+</span>
+<hr>
+<h3>Activity</h3>
+<span class="details">
+<input type="text" id="dailyActivity" ng-model="today.activity" ng-change="updateTotals()">/{{target.activity}} min
+</span>
+<hr>
+<span class="weightWaist">
+	<span class="start">
+		<label>Start</label>
+		<input type="text" id="startWeight" ng-model="personal.start.weight" ng-change="updateTotals()">
+		<input type="text" id="startWaist" ng-model="personal.start.waist" ng-change="updateTotals()">
+	</span>
+	<span class="end">
+		<label>End</label>
+		<input type="text" id="endWeight" ng-model="personal.end.weight" ng-change="updateTotals()">
+		<input type="text" id="endWaist" ng-model="personal.end.waist" ng-change="updateTotals()">
+	</span>
+</span>
+<hr>
+<span class="weeklySummary">
+{{weekly.calories}}/{{weekly.targetCalories}} Calories per week<br>{{weekly.activity}}/{{weekly.targetActivity}} minutes of activity per week
+</span>
